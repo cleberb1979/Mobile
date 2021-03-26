@@ -1,16 +1,22 @@
 package commons.start;
 
 import java.io.File;
+import java.net.URL;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 import com.itextpdf.text.Chunk;
 import com.itextpdf.text.Document;
 import com.opencsv.CSVReader;
 
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
+
 public class StartParameters {
-	private WebDriver driver;
+	private AndroidDriver<MobileElement> driver;
 	
 	private CSVReader reader;
 	
@@ -30,8 +36,37 @@ public class StartParameters {
 
 	public Chunk getDateExec;
 	
+	public boolean firstLine;
+	
+	public DesiredCapabilities capabilities;
+	
+	public URL urlAppiumServer;
 	
 	
+	public URL getUrlAppiumServer() {
+		return urlAppiumServer;
+	}
+
+	public void setUrlAppiumServer(URL urlAppiumServer) {
+		this.urlAppiumServer = urlAppiumServer;
+	}
+
+	public DesiredCapabilities getCapabilities() {
+		return capabilities;
+	}
+
+	public void setCapabilities(DesiredCapabilities capabilities) {
+		this.capabilities = capabilities;
+	}
+
+	public boolean getFirstLine() {
+		return firstLine;
+	}
+
+	public void setFirstLine(boolean firstLine) {
+		this.firstLine = firstLine;
+	}
+
 	public boolean getCondition() {
 		return condition;
 	}
@@ -64,11 +99,11 @@ public class StartParameters {
 		this.prop = prop;
 	}
 
-	public WebDriver getDriver() {
+	public AndroidDriver<MobileElement> getDriver() {
 		return driver;
 	}
 
-	public void setDriver(WebDriver driver) {
+	public void setDriver(AndroidDriver<MobileElement> driver) {
 		this.driver = driver;
 	}
 
@@ -103,6 +138,9 @@ public class StartParameters {
 	public void setReader(CSVReader reader) {
 		this.reader = reader;
 	}
+
+	
+	
 	
 	
 	

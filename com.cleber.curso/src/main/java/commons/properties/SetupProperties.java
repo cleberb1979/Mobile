@@ -9,14 +9,13 @@ import commons.start.StartParameters;
 
 public class SetupProperties {
 	
-	public static void setConfig(StartParameters sttp) throws IOException {
+	public static Properties setConfig(StartParameters sttp) throws IOException {
 		
 		Properties prop = new Properties();
-		FileInputStream file = new FileInputStream("/Users/cleberluiz/Desktop/Meurobo/config.properties");
+		FileInputStream file = new FileInputStream("src/main/resources/config.properties");
 		prop.load(file);
 		
-		sttp.setProp(prop);
-		
+		return prop;
 		
 	}
 
